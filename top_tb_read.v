@@ -13,10 +13,6 @@ module top_tb_sinleread();
     wire penable, pwrite;
     wire pwrite_out, penable_out;
 
-    // =====================
-    // MODULE INSTANTIATIONS
-    // =====================
-
     // AHB MASTER
     AHB_Master ahb (
         hclk,
@@ -65,17 +61,13 @@ module top_tb_sinleread();
         hresp
     );
 
-    // =====================
-    // CLOCK GENERATION
-    // =====================
+
     initial begin
         hclk = 1'b0;
         forever #10 hclk = ~hclk;
     end
 
-    // =====================
-    // RESET TASK
-    // =====================
+    
     task reset();
     begin
         @(negedge hclk);
@@ -86,9 +78,7 @@ module top_tb_sinleread();
     end
     endtask
 
-    // =====================
-    // TEST SEQUENCE
-    // =====================
+
     initial begin
         #1
         reset();
