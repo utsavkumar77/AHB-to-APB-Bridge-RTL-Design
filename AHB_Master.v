@@ -6,8 +6,8 @@ module AHB_Master(
     output reg [1:0] htrans
 );
 
-    reg [2:0] hburst;   // single, 4, 8, 16...
-    reg [2:0] hsize;    // size 8, 16, ...
+    reg [2:0] hburst;   
+    reg [2:0] hsize;    
     integer i, j;
 
     
@@ -20,7 +20,7 @@ begin
     #1;
     begin
         hwrite   = 1;
-        htrans   = 2'd2;           // NONSEQ
+        htrans   = 2'd2;           
         hsize    = 0;
         hburst   = 0;
         hreadyin = 1;
