@@ -13,9 +13,7 @@ module top_tb_burstwrite();
     wire penable, pwrite;
     wire pwrite_out, penable_out;
 
-    // =====================
-    // MODULE INSTANTIATIONS
-    // =====================
+
 
     // AHB MASTER
     AHB_Master ahb (
@@ -65,17 +63,13 @@ module top_tb_burstwrite();
         hresp
     );
 
-    // =====================
-    // CLOCK GENERATION
-    // =====================
+    
     initial begin
         hclk = 1'b0;
         forever #10 hclk = ~hclk;
     end
 
-    // =====================
-    // RESET TASK
-    // =====================
+    
     task reset();
     begin
         @(negedge hclk);
@@ -86,9 +80,7 @@ module top_tb_burstwrite();
     end
     endtask
 
-    // =====================
-    // TEST SEQUENCE
-    // =====================
+    
     initial begin
         #1
         reset();
