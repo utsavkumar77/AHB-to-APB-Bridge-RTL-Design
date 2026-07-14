@@ -23,7 +23,7 @@ AHB_Slave ahb_slave (
     .Hclk      (hclk),
     .Hresetn   (hresetn),
     .Hwrite    (hwrite),
-    .Hreadyin  (hreadyout),   // ? CRITICAL: feedback from APB controller
+    .Hreadyin  (hreadyout),   
     .Htrans    (htrans),
     .Haddr     (haddr),
     .Hwdata    (hwdata),
